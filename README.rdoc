@@ -1,0 +1,30 @@
+= PSTree - Process Status Tree for UNIX in Ruby
+
+== Description
+
+This library can be used to create and display a process status tree as a Ruby
+datastructure.
+
+== Installation
+
+Install the gem by typing
+
+# gem install term-ansicolor
+
+== Download
+
+The homepage of this library is located at
+
+You can display a simple process tree by executing the ruby-pstree script.
+
+* http://flori.github.com/pstree
+
+== Author
+
+Florian Frank mailto:flori@ping.de
+
+== License
+
+This is free software; you can redistribute it and/or modify it under the
+terms of the GNU General Public License Version 2 as published by the Free
+Software Foundation: www.gnu.org/copyleft/gpl.html
