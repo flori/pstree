@@ -52,7 +52,7 @@ class PSTree
     psoutput.each_line do |line|
       next if line !~ /^\s*\d+/
       line.strip!
-      ps = ProcStruct.new *line.split(/\s+/, 4)
+      ps = ProcStruct.new(*line.split(/\s+/, 4))
       @process[ps.pid] = ps
       @pstree[ps.ppid] << ps
     end
