@@ -13,7 +13,7 @@ GemHadar do
   description 'This library uses the output of the ps command to creaste process tree data structure for the current host.'
   licenses    << 'GPL-2'
   test_dir    'tests'
-  ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', '.rvmrc', 'coverage'
+  ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', '.rvmrc', 'coverage', '.bundle'
   readme      'README.rdoc'
   executables << 'ruby-pstree'
 
