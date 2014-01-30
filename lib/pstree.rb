@@ -61,13 +61,13 @@ class PSTree
   def recurse(pid, shift_callback = nil, level = 0, &node_callback)
     @child_count[level] = @pstree[pid].size
     for l in 0...level
-      shift_callback && shift_callback.call(@child_count[l], l == level - 1)
+      shift_callback and shift_callback.call(@child_count[l], l == level - 1)
     end
-    node_callback && (process = @process[pid]) && node_callback.call(process)
+    node_callback and process = @process[pid] and node_callback.call(process)
     if @pstree.key?(pid)
       @child_count[level] = @pstree[pid].size - 1
       @pstree[pid].each do |ps|
-        recurse(ps.pid, shift_callback, level + 1 , &node_callback)
+        recurse(ps.pid, shift_callback, level + 1, &node_callback)
         @child_count[level] -= 1
       end
     end
