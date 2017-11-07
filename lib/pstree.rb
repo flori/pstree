@@ -15,8 +15,25 @@ class PSTree
 
   include Enumerable
 
-  def initialize(root_pid = nil)
+  def initialize(root_pid = nil, charset: 'UTF-8')
+    @charset  = charset.to_s.upcase
     @root_pid = root_pid.to_i
+  end
+
+  def children_zero(last)
+    if @charset == 'UTF-8'
+      last ? '└─ ' : '   '
+    else
+      last ? '`- ' : '   '
+    end
+  end
+
+  def children_not_zero(last)
+    if @charset == 'UTF-8'
+      last ? '├─ ' : '│  '
+    else
+      last ? '+- ' : '|  '
+    end
   end
 
   def to_s
@@ -25,9 +42,9 @@ class PSTree
     recurse @root_pid,
       -> children, last {
         if children.zero?
-          result << (last ? '`-- ' : '    ')
+          result << children_zero(last)
         else
-          result << (last ? '+-- ' : '|   ')
+          result << children_not_zero(last)
         end
       } do |ps|
       result << ps.to_s << "\n"
