@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
-# stub: pstree 0.2.0 ruby lib
+# stub: pstree 0.3.0 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "pstree".freeze
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Florian Frank".freeze]
-  s.date = "2017-11-07"
+  s.date = "2019-04-15"
   s.description = "This library uses the output of the ps command to creaste process tree data structure for the current host.".freeze
   s.email = "flori@ping.de".freeze
   s.executables = ["ruby-pstree".freeze]
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://flori.github.com/pstree".freeze
   s.licenses = ["GPL-2".freeze]
   s.rdoc_options = ["--title".freeze, "Pstree - Ruby library that builds a process tree of this host".freeze, "--main".freeze, "README.rdoc".freeze]
-  s.rubygems_version = "2.6.13".freeze
+  s.rubygems_version = "3.0.3".freeze
   s.summary = "Ruby library that builds a process tree of this host".freeze
 
   if s.respond_to? :specification_version then

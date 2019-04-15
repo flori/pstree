@@ -65,7 +65,7 @@ class PSTree
     @process = {}
     @pstree = Hash.new { |h,k| h[k] = [] }
     pid = @root_pid.zero? ? nil : @root_pid
-    psoutput = `/bin/ps axww -o ppid,pid,user,command #{pid}`
+    psoutput = `/bin/ps axww -o ppid,pid,user,command`
     psoutput.each_line do |line|
       next if line !~ /^\s*\d+/
       line.strip!
@@ -75,7 +75,8 @@ class PSTree
     end
   end
 
-  def recurse(pid, shift_callback = nil, level = 0, &node_callback)
+  def recurse(pid, shift_callback = nil, level = 0, in_root = false, &node_callback)
+    in_root = in_root || @root_pid == 0 || @root_pid == pid
     @child_count[level] = @pstree[pid].size
     for l in 0...level
       shift_callback and shift_callback.call(@child_count[l], l == level - 1)
@@ -84,7 +85,7 @@ class PSTree
     if @pstree.key?(pid)
       @child_count[level] = @pstree[pid].size - 1
       @pstree[pid].each do |ps|
-        recurse(ps.pid, shift_callback, level + 1, &node_callback)
+        recurse(ps.pid, shift_callback, level + 1, in_root, &node_callback)
         @child_count[level] -= 1
       end
     end
