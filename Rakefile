@@ -14,7 +14,7 @@ GemHadar do
   licenses    << 'GPL-2'
   test_dir    'tests'
   ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', '.rvmrc', 'coverage'
-  readme      'README.rdoc'
+  readme      'README.md'
   executables << 'ruby-pstree'
 
   development_dependency 'simplecov'
