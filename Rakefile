@@ -8,7 +8,7 @@ GemHadar do
   module_type 'class'
   author      'Florian Frank'
   email       'flori@ping.de'
-  homepage    "http://flori.github.com/#{name}"
+  homepage    "https://github.com/flori/#{name}"
   summary     'Ruby library that builds a process tree of this host'
   description 'This library uses the output of the ps command to creaste process tree data structure for the current host.'
   licenses    << 'GPL-2'
