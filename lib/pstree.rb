@@ -64,7 +64,6 @@ class PSTree
     @child_count = [ 0 ]
     @process = {}
     @pstree = Hash.new { |h,k| h[k] = [] }
-    pid = @root_pid.zero? ? nil : @root_pid
     psoutput = `/bin/ps axww -o ppid,pid,user,command`
     psoutput.each_line do |line|
       next if line !~ /^\s*\d+/
