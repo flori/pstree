@@ -16,6 +16,4 @@ GemHadar do
   ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', '.rvmrc', 'coverage'
   readme      'README.md'
   executables << 'ruby-pstree'
-
-  development_dependency 'simplecov'
 end
