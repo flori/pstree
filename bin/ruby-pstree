@@ -2,4 +2,7 @@
 
 require 'pstree'
 
-puts PSTree.new(ARGV.shift)
+pids = ARGV.empty? ? [ 0 ] : ARGV
+pids.each do |pid|
+  puts PSTree.new(pid)
+end
