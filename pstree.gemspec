@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Florian Frank".freeze]
-  s.date = "2024-09-24"
+  s.date = "1980-01-02"
   s.description = "This library uses the output of the ps command to creaste process tree data structure for the current host.".freeze
   s.email = "flori@ping.de".freeze
   s.executables = ["ruby-pstree".freeze]
@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/flori/pstree".freeze
   s.licenses = ["GPL-2".freeze]
   s.rdoc_options = ["--title".freeze, "Pstree - Ruby library that builds a process tree of this host".freeze, "--main".freeze, "README.md".freeze]
-  s.rubygems_version = "3.5.18".freeze
+  s.rubygems_version = "3.6.9".freeze
   s.summary = "Ruby library that builds a process tree of this host".freeze
 
   s.specification_version = 4
 
-  s.add_development_dependency(%q<gem_hadar>.freeze, ["~> 1.17.1".freeze])
+  s.add_development_dependency(%q<gem_hadar>.freeze, ["~> 2.0".freeze])
 end
