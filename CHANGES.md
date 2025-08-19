@@ -1,5 +1,14 @@
 # Changes
 
+## 2025-08-19 v0.5.0
+
+- **Documentation**: Comprehensive YARD documentation added to all classes and
+  methods, with improved README containing installation instructions and usage
+  examples
+- **Licensing**: Full GPL-2.0 license file included in gem package
+- **Packaging**: Refined gemspec and Rakefile configurations to exclude
+  unnecessary files
+
 ## 2024-09-24 v0.4.0
 
 + Supports display of forrest now if more than one `PID` was given as arguments.
