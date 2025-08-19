@@ -1,5 +1,7 @@
 .*.sw[pon]
 .rvmrc
+.yardoc
 Gemfile.lock
 coverage
+doc
 pkg
