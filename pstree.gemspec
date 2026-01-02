@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/flori/pstree".freeze
   s.licenses = ["GPL-2".freeze]
   s.rdoc_options = ["--title".freeze, "Pstree - Ruby library that builds a process tree of this host".freeze, "--main".freeze, "README.md".freeze]
-  s.rubygems_version = "3.6.9".freeze
+  s.rubygems_version = "4.0.2".freeze
   s.summary = "Ruby library that builds a process tree of this host".freeze
 
   s.specification_version = 4
 
-  s.add_development_dependency(%q<gem_hadar>.freeze, ["~> 2.1".freeze])
+  s.add_development_dependency(%q<gem_hadar>.freeze, [">= 2.16.3".freeze])
 end
