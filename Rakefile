@@ -12,6 +12,11 @@ GemHadar do
   summary     'Ruby library that builds a process tree of this host'
   description 'This library uses the output of the ps command to creaste process tree data structure for the current host.'
   licenses    << 'GPL-2'
+
+  changelog do
+    filename 'CHANGES.md'
+  end
+
   test_dir    'tests'
   ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', '.rvmrc', 'coverage',
     '.yardoc', 'doc'
