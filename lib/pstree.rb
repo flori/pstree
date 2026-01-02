@@ -165,7 +165,6 @@ class PSTree
     @child_count = [ 0 ]
     @process = {}
     @pstree = Hash.new { |h,k| h[k] = [] }
-    psoutput = `/bin/ps axww -o ppid,pid,user,command`
     psoutput.each_line do |line|
       next if line !~ /^\s*\d+/
       line.strip!
@@ -173,6 +172,16 @@ class PSTree
       @process[ps.pid] = ps
       @pstree[ps.ppid] << ps
     end
+  end
+
+  # The psoutput method executes the ps command to retrieve process information
+  # and caches the result for subsequent calls
+  #
+  # @return [ String ] the raw output from the ps command containing process
+  #                    information including parent process ID, process ID, user,
+  #                    and command line for all running processes
+  def psoutput
+    @psoutput ||= `/bin/ps axww -o ppid,pid,user,command`
   end
 
   # The recurse method performs a recursive traversal of the process tree
