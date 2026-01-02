@@ -1,5 +1,18 @@
 # Changes
 
+## 2026-01-02 v0.6.0
+
+- Added caching mechanism for `/bin/ps` command output using the `psoutput`
+  method with `@psoutput ||= ...` memoization pattern
+- Maintained backward compatibility while improving performance by avoiding
+  repeated system calls
+- Introduced automated changelog generation configuration in the Rakefile with
+  `changelog` block setting `filename` to `'CHANGES.md'`
+- Updated gem dependencies including `rubygems_version` from **3.6.9** to
+  **4.0.2** and `gem_hadar` development dependency from **~> 2.1** to **>=
+  2.16.3**
+- Enabled proper changelog handling during gem packaging and release workflows
+
 ## 2025-08-19 v0.5.0
 
 - **Documentation**: Comprehensive YARD documentation added to all classes and
