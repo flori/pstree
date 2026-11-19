@@ -64,7 +64,7 @@ class PSTree
     # @return [ String ] a formatted string containing the process ID, command,
     #                    and user separated by spaces and parentheses
     def to_s
-     "%05u %s (%s)" % [ pid, cmd, user ]
+     "%07u %s (%s)" % [ pid, cmd, user ]
     end
   end
 
