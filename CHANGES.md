@@ -1,5 +1,20 @@
 # Changes
 
+## 2026-11-19 v0.7.0
+
+### Improvements
+
+- Widen process ID padding in `PSTree` output from 5 to 7 characters in the
+  `to_s` method.
+
+### Build & CI
+
+- Bump `gem_hadar` development dependency floor to `>= 2.24.1`.
+- Remove stale vim modelines from `Gemfile` and `Rakefile`.
+- Change `Rakefile` file mode from 755 to 644.
+- Regenerate `lib/pstree/version.rb` with the current GemHadar comment
+  template.
+
 ## 2026-01-02 v0.6.0
 
 - Added caching mechanism for `/bin/ps` command output using the `psoutput`
