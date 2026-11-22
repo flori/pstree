@@ -3,85 +3,122 @@
 ## 2026-11-19 v0.7.0
 
 ### Improvements
-
-- Widen process ID padding in `PSTree` output from 5 to 7 characters in the
-  `to_s` method.
+- Widen process ID padding in `PSTree` output from 5 to 7
+  characters in the `to_s` method.
 
 ### Build & CI
-
 - Bump `gem_hadar` development dependency floor to `>= 2.24.1`.
-- Remove stale vim modelines from `Gemfile` and `Rakefile`.
-- Change `Rakefile` file mode from 755 to 644.
-- Regenerate `lib/pstree/version.rb` with the current GemHadar comment
-  template.
 
 ## 2026-01-02 v0.6.0
 
-- Added caching mechanism for `/bin/ps` command output using the `psoutput`
-  method with `@psoutput ||= ...` memoization pattern
-- Maintained backward compatibility while improving performance by avoiding
-  repeated system calls
-- Introduced automated changelog generation configuration in the Rakefile with
-  `changelog` block setting `filename` to `'CHANGES.md'`
-- Updated gem dependencies including `rubygems_version` from **3.6.9** to
-  **4.0.2** and `gem_hadar` development dependency from **~> 2.1** to **>=
-  2.16.3**
-- Enabled proper changelog handling during gem packaging and release workflows
+### Features
+- Added `psoutput` method with memoization to cache `/bin/ps`
+  command output.
+- Improved performance by avoiding repeated system calls to
+  `/bin/ps` during initialization.
+
+### Build & CI
+- Configured automated changelog generation in the Rakefile.
+- Updated `gem_hadar` development dependency from **~> 2.1** to
+  **>= 2.16.3**.
 
 ## 2025-08-19 v0.5.0
 
-- **Documentation**: Comprehensive YARD documentation added to all classes and
-  methods, with improved README containing installation instructions and usage
-  examples
-- **Licensing**: Full GPL-2.0 license file included in gem package
-- **Packaging**: Refined gemspec and Rakefile configurations to exclude
-  unnecessary files
+### Features
+
+- Added full **GPL-2.0** license text to the repository and gem
+  package.
+
+### Improvements
+
+- Expanded `README.md` with installation instructions for RubyGems and
+  Bundler, system requirements, and programmatic usage examples.
+- Added comprehensive YARD documentation for `PSTree` and
+  `ProcStruct` classes, including method descriptions and
+  parameters.
+
+### Build & CI
+
+- Excluded documentation artifacts and metadata files from gem
+  packaging by updating `Rakefile` and `gemspec`.
+- Updated `gem_hadar` development dependency from **1.17.1** to
+  **2.1**.
 
 ## 2024-09-24 v0.4.0
 
-+ Supports display of forrest now if more than one `PID` was given as arguments.
-+ Removed obsolete variable `code`.
-+ Update dependencies and version information:
-    - Remove `simplecov` development dependency
-    - Update `gem_hadar` development dependency to `~> **1.17.1**`
-    - Removed ruby **3.2.3** from `.tool-versions` file
+### Features
+- Support displaying the process tree for multiple PIDs by passing
+  several PIDs as arguments to the `ruby-pstree` executable.
+- Default to PID `0` if no PIDs are provided as arguments.
+
+### Improvements
+- Removed obsolete `pid` variable from `PSTree#initialize`.
+
+### Build & CI
+- Remove `simplecov` development dependency from `Rakefile` and
+  gemspec.
+- Update `gem_hadar` development dependency to `~> **1.17.1**`.
+- Remove `.tool-versions` file specifying Ruby **3.2.3**.
+
+### Documentation
+- Add new `CHANGES.md` file with version history.
 
 ## 2024-03-15 v0.3.1
 
-* **Changes for version **1.0**:
-  + Use `github` as homepage.
-  + Create `codeql-analysis.yml`.
-  + Update `gemspec`.
-  + Configure `asdf`.
+### Build & CI
+- Updated the `homepage` to `https://github.com/flori/pstree` in the
+  `Rakefile` and `pstree.gemspec`.
+- Upgraded the `gem_hadar` development dependency to **~> 1.14.0** and
+  simplified the dependency declaration logic in `pstree.gemspec`.
+- Updated the Ruby version in `.tool-versions` from 3.0.4 to 3.2.3.
+- Added a GitHub Actions workflow for CodeQL analysis in
+  `.github/workflows/codeql-analysis.yml`.
+- Updated `pstree.gemspec` to use `README.md` instead of `README.rdoc`
+  and updated the file list.
+
+### Documentation
+- Updated the documentation source in `pstree.gemspec` from `README.rdoc`
+  to `README.md`.
 
 ## 2019-04-15 v0.3.0
 
-* Convert `rdoc README` to markdown
-* Only recurse into this one subtree correctly
-* Merge changes from `github.com:flori/pstree`
-  + Support UTF-8 output and use it by default (default encoding changed to **UTF-8**)
-  + Update code to use new default encoding (**UTF-8**)
+### Features
+- Add support for UTF-8 tree characters, enabled by
+  default, with ASCII as a fallback option.
+
+### Fixes
+- Correctly recurse into only the specified process subtree
+  instead of scanning the entire process list.
+
+### Improvements
+- Update `README` from RDoc to Markdown format, adding a
+  Usage section with example output.
+
+### Build & CI
+- Update `gem_hadar` development dependency to version
+  **1.9.1**.
+- Update `Rakefile` configuration to reference
+  `README.md`.
 
 ## 2017-11-07 v0.2.0
 
-* **Support UTF-8 output and use it by default**
-  + Added support for UTF-8 output
-  + Changed default output encoding to UTF-8
-* **Cleanup code**
-  + Improved code organization and structure
-* **stop ruby 1.9 from whining**
-  + Updated code to be compatible with Ruby 1.9
+### Features
+- Added support for UTF-8 output and set it as the default.
+
+### Improvements
+- Refactored output rendering to use charset-specific helper methods.
+
+### Fixes
+- Fixed a syntax error when instantiating `ProcStruct` in Ruby 1.9.
 
 ## 2014-02-06 v0.1.0
 
-* **Bumped gem_hadar dependency**:
-  + Updated `gem_hadar` dependency to use the latest version
-* **Dependency on new version of gem_hadar**:
-  + Updated `gem_hadar` dependency to use a new version (**1.0.0**)
-* **Cleanup code**:
-  + Improved code organization and readability
-* **Fix stupid ruby warning**:
-  + Resolved a Ruby warning issue
+### Improvements
+- Switched logical operator `&&` to `and` in `lib/pstree.rb` for improved
+  readability.
+
+### Build & CI
+- Updated `gem_hadar` dependency from `~> 0.3.1` to `~> 1.0.0`.
 
 ## 2013-05-15 v0.0.0
 
